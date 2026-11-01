@@ -2,160 +2,186 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="NAYR STREETWEAR - أزياء ستريت وير عصرية في المغرب">
-  <title>NAYR STREETWEAR | ملابس الشارع</title>
-  <style>
-    *{box-sizing:border-box}
-    body{margin:0;background:#090909;color:#fff;font-family:Arial,Tahoma,sans-serif}
-    a{color:inherit;text-decoration:none}
-    header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #292929}
-    .logo{font-size:25px;font-weight:900;letter-spacing:2px;direction:ltr}
-    nav{display:flex;gap:24px;font-size:14px}
-    .hero{min-height:570px;padding:100px 8%;display:flex;align-items:center;background:linear-gradient(90deg,#000 15%,#000b),url('https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=1600') center/cover}
-    .hero h1{font-size:clamp(42px,7vw,78px);line-height:1.15;margin:0 0 20px;font-weight:900}
-    .hero p{color:#ccc;font-size:18px;line-height:1.8}
-    .btn{display:inline-block;background:#fff;color:#000;padding:15px 28px;font-weight:bold;margin-top:20px}
-    section{padding:75px 8%}
-    .section-title{text-align:center;font-size:32px;margin:0 0 40px}
-    .products{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
-    .product{background:#151515;padding-bottom:20px;text-align:center}
-    .product img{width:100%;height:350px;object-fit:cover;display:block}
-    .product h3{margin:18px 0 8px}
-    .price{color:#ddd;font-weight:bold}
-    .product button{background:white;color:black;border:0;padding:12px 25px;margin-top:12px;cursor:pointer;font-weight:bold}
-    .about{text-align:center;background:#151515;line-height:2;color:#ccc}
-    .about h2{color:white}
-    .order{max-width:650px;margin:auto}
-    .order input,.order select,.order textarea{width:100%;padding:15px;margin:8px 0;background:#171717;border:1px solid #444;color:white;font-size:15px}
-    .order button{width:100%;padding:16px;background:white;color:black;border:0;font-weight:bold;font-size:16px;cursor:pointer;margin-top:12px}
-    footer{text-align:center;padding:30px;color:#999;border-top:1px solid #292929}
-    @media(max-width:700px){
-      header{padding:18px 5%;flex-wrap:wrap;gap:15px}
-      nav{gap:13px;font-size:12px}
-      .hero{min-height:450px;padding:65px 7%}
-      .products{grid-template-columns:1fr}
-      .product img{height:390px}
-      section{padding:55px 6%}
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="NAYR STREETWEAR - Moroccan Streetwear Brand">
+<title>NAYR STREETWEAR</title>
+<style>
+*{box-sizing:border-box}
+:root{--bg:#090909;--panel:#151515;--white:#fff;--muted:#aaa}
+body{margin:0;background:var(--bg);color:var(--white);font-family:Arial,Tahoma,sans-serif}
+a{color:inherit;text-decoration:none}
+button,input,select,textarea{font:inherit}
+header{height:78px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid #292929;position:sticky;top:0;background:#090909;z-index:10}
+.logo{font-size:27px;font-weight:900;letter-spacing:3px;direction:ltr}
+nav{display:flex;align-items:center;gap:25px;font-size:14px}
+nav a:hover{color:#aaa}
+.lang{background:transparent;color:white;border:1px solid #777;padding:9px 14px;cursor:pointer}
+.hero{min-height:590px;display:flex;align-items:center;padding:80px 9%;background:linear-gradient(90deg,#000e,#0008),url('https://images.unsplash.com/photo-1523398002811-999ca8dec234?w=1600') center/cover}
+.hero-content{max-width:650px}
+.hero h1{font-size:clamp(48px,8vw,88px);line-height:1;margin:0 0 20px;font-weight:900;direction:ltr;text-align:start}
+.hero p{font-size:18px;line-height:1.9;color:#ddd}
+.btn{display:inline-block;background:white;color:black;padding:15px 28px;font-weight:bold;margin-top:20px;border:0;cursor:pointer}
+section{padding:85px 8%}
+.section-title{text-align:center;font-size:32px;margin:0 0 42px}
+.products{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+.product{background:var(--panel);text-align:center;padding-bottom:22px}
+.product img{width:100%;height:360px;object-fit:cover;display:block}
+.product h3{margin:20px 10px 9px}
+.price{color:#ddd;font-weight:bold}
+.product button{background:white;color:black;border:0;padding:12px 25px;margin-top:15px;cursor:pointer;font-weight:bold}
+.about{background:#151515;text-align:center;color:#bbb;line-height:2.1}
+.about h2{color:white}
+.order{max-width:650px;margin:auto}
+.order input,.order select,.order textarea{width:100%;padding:15px;margin:8px 0;background:#171717;border:1px solid #444;color:white;outline:none}
+.order button{width:100%;padding:16px;background:white;color:black;border:0;font-weight:bold;cursor:pointer;margin-top:14px}
+.note{text-align:center;color:#999;font-size:13px;margin-top:15px}
+footer{text-align:center;padding:35px 15px;color:#999;border-top:1px solid #292929}
+footer .logo{color:white;margin-bottom:12px}
+[dir="rtl"] nav{direction:rtl}
+[dir="ltr"] nav{direction:ltr}
+@media(max-width:750px){
+ header{height:auto;min-height:75px;padding:15px 5%;flex-wrap:wrap;gap:14px}
+ nav{order:3;width:100%;justify-content:space-between;gap:8px;font-size:12px}
+ .hero{min-height:470px;padding:65px 7%}
+ .products{grid-template-columns:1fr}
+ .product img{height:390px}
+ section{padding:60px 6%}
+}
+</style>
 </head>
 <body>
 
 <header>
   <div class="logo">NAYR</div>
   <nav>
-    <a href="#home">الرئيسية</a>
-    <a href="#shop">المتجر</a>
-    <a href="#about">من نحن</a>
-    <a href="#order">اطلب الآن</a>
+    <a href="#home" data-ar="الرئيسية" data-fr="Accueil">الرئيسية</a>
+    <a href="#shop" data-ar="المتجر" data-fr="Boutique">المتجر</a>
+    <a href="#about" data-ar="من نحن" data-fr="À propos">من نحن</a>
+    <a href="#order" data-ar="اطلب الآن" data-fr="Commander">اطلب الآن</a>
   </nav>
+  <button class="lang" onclick="toggleLanguage()">Français</button>
 </header>
 
+<main>
 <div class="hero" id="home">
-  <div>
+  <div class="hero-content">
     <h1>NAYR<br>STREETWEAR</h1>
-    <p>أسلوبك. هويتك. تميّزك.<br>اكتشف مجموعتنا الجديدة من أزياء الشارع.</p>
-    <a class="btn" href="#shop">اكتشف المجموعة</a>
+    <p data-ar="أسلوبك. هويتك. تميّزك.<br>اكتشف مجموعتنا الجديدة من أزياء الشارع."
+       data-fr="Ton style. Ton identité. Ta différence.<br>Découvre notre nouvelle collection Streetwear.">
+       أسلوبك. هويتك. تميّزك.<br>اكتشف مجموعتنا الجديدة من أزياء الشارع.</p>
+    <a class="btn" href="#shop" data-ar="اكتشف المجموعة" data-fr="Découvrir la collection">اكتشف المجموعة</a>
   </div>
 </div>
 
 <section id="shop">
-  <h2 class="section-title">المجموعة الجديدة</h2>
+  <h2 class="section-title" data-ar="المجموعة الجديدة" data-fr="Nouvelle collection">المجموعة الجديدة</h2>
   <div class="products">
     <article class="product">
-      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700" alt="تيشيرت أسود">
-      <h3>تيشيرت NAYR الأسود</h3>
-      <div class="price">199 درهم</div>
-      <button onclick="chooseProduct('تيشيرت NAYR الأسود')">اطلب الآن</button>
+      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=700" alt="NAYR T-shirt">
+      <h3 data-ar="تيشيرت NAYR الأسود" data-fr="T-shirt NAYR noir">تيشيرت NAYR الأسود</h3>
+      <div class="price">199 MAD</div>
+      <button onclick="chooseProduct(0)" data-ar="اطلب الآن" data-fr="Commander">اطلب الآن</button>
     </article>
     <article class="product">
-      <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=700" alt="تيشيرت أبيض">
-      <h3>تيشيرت NAYR الأبيض</h3>
-      <div class="price">199 درهم</div>
-      <button onclick="chooseProduct('تيشيرت NAYR الأبيض')">اطلب الآن</button>
+      <img src="https://images.unsplash.com/photo-1503341504253-dff4815485f1?w=700" alt="NAYR T-shirt">
+      <h3 data-ar="تيشيرت NAYR الأبيض" data-fr="T-shirt NAYR blanc">تيشيرت NAYR الأبيض</h3>
+      <div class="price">199 MAD</div>
+      <button onclick="chooseProduct(1)" data-ar="اطلب الآن" data-fr="Commander">اطلب الآن</button>
     </article>
     <article class="product">
-      <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=700" alt="ملابس ستريت وير">
-      <h3>تصميم NAYR الجديد</h3>
-      <div class="price">199 درهم</div>
-      <button onclick="chooseProduct('تصميم NAYR الجديد')">اطلب الآن</button>
+      <img src="https://images.unsplash.com/photo-1551028719-00167b16eac5?w=700" alt="NAYR Streetwear">
+      <h3 data-ar="تصميم NAYR الجديد" data-fr="Nouveau design NAYR">تصميم NAYR الجديد</h3>
+      <div class="price">199 MAD</div>
+      <button onclick="chooseProduct(2)" data-ar="اطلب الآن" data-fr="Commander">اطلب الآن</button>
     </article>
   </div>
 </section>
 
 <section class="about" id="about">
-  <h2>من نحن؟</h2>
-  <p>NAYR STREETWEAR علامة مغربية مستوحاة من ثقافة الشارع.<br>
-  تصاميم عصرية، تفاصيل مميزة، وهوية خاصة بك.<br>
-  مقرنا في أكادير والتوصيل متاح إلى مدن المغرب.</p>
+  <h2 data-ar="من نحن؟" data-fr="Qui sommes-nous ?">من نحن؟</h2>
+  <p data-ar="NAYR STREETWEAR علامة مغربية مستوحاة من ثقافة الشارع.<br>تصاميم عصرية، تفاصيل مميزة، وهوية خاصة بك.<br>مقرنا في أكادير والتوصيل متاح إلى مدن المغرب."
+     data-fr="NAYR STREETWEAR est une marque marocaine inspirée de la culture urbaine.<br>Des designs modernes, des détails uniques et une identité qui te ressemble.<br>Basés à Agadir, nous livrons partout au Maroc.">
+     NAYR STREETWEAR علامة مغربية مستوحاة من ثقافة الشارع.<br>تصاميم عصرية، تفاصيل مميزة، وهوية خاصة بك.<br>مقرنا في أكادير والتوصيل متاح إلى مدن المغرب.</p>
 </section>
 
 <section id="order">
-  <h2 class="section-title">أكمل طلبك</h2>
+  <h2 class="section-title" data-ar="أكمل طلبك" data-fr="Finaliser votre commande">أكمل طلبك</h2>
   <form class="order" onsubmit="sendOrder(event)">
-    <input id="name" placeholder="الاسم الكامل" required>
-    <input id="phone" type="tel" placeholder="رقم الهاتف" required>
-    <input id="city" list="cities" placeholder="المدينة" required>
+    <input id="name" required placeholder="الاسم الكامل" data-ar-placeholder="الاسم الكامل" data-fr-placeholder="Nom complet">
+    <input id="phone" type="tel" required placeholder="رقم الهاتف" data-ar-placeholder="رقم الهاتف" data-fr-placeholder="Téléphone">
+    <input id="city" list="cities" required placeholder="المدينة" data-ar-placeholder="المدينة" data-fr-placeholder="Ville">
     <datalist id="cities">
-      <option value="أكادير"><option value="الدار البيضاء">
-      <option value="الرباط"><option value="مراكش">
-      <option value="طنجة"><option value="فاس">
-      <option value="مكناس"><option value="تطوان">
-      <option value="وجدة"><option value="القنيطرة">
-      <option value="آسفي"><option value="الجديدة">
-      <option value="بني ملال"><option value="الناظور">
-      <option value="العيون"><option value="الصويرة">
-      <option value="ورزازات"><option value="تارودانت">
+      <option value="أكادير"><option value="الدار البيضاء"><option value="الرباط">
+      <option value="مراكش"><option value="طنجة"><option value="فاس">
+      <option value="مكناس"><option value="تطوان"><option value="وجدة">
+      <option value="القنيطرة"><option value="آسفي"><option value="الجديدة">
+      <option value="بني ملال"><option value="الناظور"><option value="العيون">
+      <option value="الصويرة"><option value="ورزازات"><option value="تارودانت">
     </datalist>
-    <input id="address" placeholder="الحي والعنوان بالتفصيل" required>
+    <input id="address" required placeholder="الحي والعنوان بالتفصيل" data-ar-placeholder="الحي والعنوان بالتفصيل" data-fr-placeholder="Quartier et adresse détaillée">
     <select id="product" required>
-      <option value="">اختر المنتج</option>
-      <option>تيشيرت NAYR الأسود</option>
-      <option>تيشيرت NAYR الأبيض</option>
-      <option>تصميم NAYR الجديد</option>
+      <option value="" data-ar="اختر المنتج" data-fr="Choisir un produit">اختر المنتج</option>
+      <option value="0" data-ar="تيشيرت NAYR الأسود" data-fr="T-shirt NAYR noir">تيشيرت NAYR الأسود</option>
+      <option value="1" data-ar="تيشيرت NAYR الأبيض" data-fr="T-shirt NAYR blanc">تيشيرت NAYR الأبيض</option>
+      <option value="2" data-ar="تصميم NAYR الجديد" data-fr="Nouveau design NAYR">تصميم NAYR الجديد</option>
     </select>
     <select id="size" required>
-      <option value="">اختر المقاس</option>
-      <option>S</option><option>M</option><option>L</option>
-      <option>XL</option><option>2XL</option>
+      <option value="" data-ar="اختر المقاس" data-fr="Choisir la taille">اختر المقاس</option>
+      <option>S</option><option>M</option><option>L</option><option>XL</option><option>2XL</option>
     </select>
     <select id="color" required>
-      <option value="">اختر اللون</option>
-      <option>أسود</option><option>أبيض</option>
+      <option value="" data-ar="اختر اللون" data-fr="Choisir la couleur">اختر اللون</option>
+      <option value="أسود" data-ar="أسود" data-fr="Noir">أسود</option>
+      <option value="أبيض" data-ar="أبيض" data-fr="Blanc">أبيض</option>
     </select>
-    <input id="quantity" type="number" min="1" value="1" placeholder="الكمية" required>
-    <button type="submit">إرسال الطلب عبر واتساب</button>
+    <input id="quantity" type="number" min="1" value="1" required placeholder="الكمية" data-ar-placeholder="الكمية" data-fr-placeholder="Quantité">
+    <button type="submit" data-ar="إرسال الطلب" data-fr="Envoyer la commande">إرسال الطلب</button>
+    <p class="note" data-ar="سيتم تفعيل إرسال الطلبات عبر واتساب بعد إضافة رقم المتجر."
+       data-fr="L'envoi des commandes par WhatsApp sera activé après l'ajout du numéro du magasin.">
+       سيتم تفعيل إرسال الطلبات عبر واتساب بعد إضافة رقم المتجر.</p>
   </form>
 </section>
+</main>
 
 <footer>
   <div class="logo">NAYR STREETWEAR</div>
-  <p>صُنع بشغف في المغرب 🇲🇦</p>
-  <p>© 2026 NAYR STREETWEAR - جميع الحقوق محفوظة</p>
+  <p data-ar="صُنع بشغف في المغرب 🇲🇦" data-fr="Créé avec passion au Maroc 🇲🇦">صُنع بشغف في المغرب 🇲🇦</p>
+  <p>© 2026 NAYR STREETWEAR</p>
 </footer>
 
 <script>
-  const WHATSAPP_NUMBER = "212600000000";
+let currentLang = "ar";
 
-  function chooseProduct(name){
-    document.getElementById('product').value=name;
-    document.getElementById('order').scrollIntoView({behavior:'smooth'});
-  }
+function toggleLanguage(){
+  currentLang = currentLang === "ar" ? "fr" : "ar";
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === "ar" ? "rtl" : "ltr";
 
-  function sendOrder(event){
-    event.preventDefault();
-    const fields = ['name','phone','city','address','product','size','color','quantity'];
-    const values = fields.map(id=>document.getElementById(id).value.trim());
-    const labels = ['الاسم الكامل','الهاتف','المدينة','العنوان','المنتج','المقاس','اللون','الكمية'];
-    const message = labels.map((label,i)=>label+': '+values[i]).join('\n');
-    if(WHATSAPP_NUMBER === '212600000000'){
-      alert('نموذج الطلب جاهز. خاصنا نضيفو رقم واتساب ديال المتجر قبل استقبال الطلبات.');
-      return;
-    }
-    window.open('https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(message),'_blank');
-  }
+  document.querySelectorAll("[data-ar]").forEach(el=>{
+    el.innerHTML = el.dataset[currentLang];
+  });
+
+  document.querySelectorAll("[data-ar-placeholder]").forEach(el=>{
+    el.placeholder = el.dataset[currentLang + "Placeholder"];
+  });
+
+  document.querySelector(".lang").textContent =
+    currentLang === "ar" ? "Français" : "العربية";
+}
+
+function chooseProduct(id){
+  document.getElementById("product").value = String(id);
+  document.getElementById("order").scrollIntoView({behavior:"smooth"});
+}
+
+function sendOrder(event){
+  event.preventDefault();
+  const msg = currentLang === "ar"
+    ? "النموذج جاهز. سيتم تفعيل استقبال الطلبات بعد إضافة رقم واتساب المتجر."
+    : "Le formulaire est prêt. Les commandes seront activées après l'ajout du numéro WhatsApp du magasin.";
+  alert(msg);
+}
 </script>
 </body>
 </html>
