@@ -123,35 +123,17 @@
 }
 
 /* NAYR COLOR SELECTOR - PREMIUM */
-.color-options {
-  display: flex !important;
-  align-items: center;
-  gap: 16px !important;
-  padding: 8px 4px;
-}
+.color-options 
 
 .color-choice {
-  display: block !important;
-  width: 34px !important;
-  height: 34px !important;
-  min-width: 34px;
-  border-radius: 50% !important;
-  cursor: pointer;
-  border: 2px solid #777 !important;
-  box-shadow: 0 0 0 2px #191919;
-}
 
 .color-choice.selected {
   outline: 2px solid #fff !important;
   outline-offset: 4px;
 }
 
-.custom-preview {
-  margin: 12px 0;
-  color: #fff !important;
-  font-size: 12px;
-  letter-spacing: 1px;
-}
+.custom-preview 
+
 
 /* NAYR CUSTOMIZER */
 .customizer {
@@ -160,12 +142,7 @@
   background: #191919;
   border: 1px solid #333;
 }
-.customizer-title {
-  color: #aaa;
-  font-size: 11px;
-  letter-spacing: 2px;
-  margin-bottom: 10px;
-}
+.customizer-title 
 .color-options {
   display: flex;
   gap: 10px;
@@ -664,86 +641,19 @@ footer:"© NAYR STREETWEAR — جميع الحقوق محفوظة",back:"الع�
 };
 function t(k){return words[lang][k]}
 
-function renderProducts(filter="all"){
-const list=products.filter(p=>filter==="all"||p.color===filter);
-
-document.getElementById("products").innerHTML=list.map(p=>`
-<article class="product">
-<div class="product-img">
-<img src="${p.img}" alt="${p.name}" loading="lazy">
-<span class="tag">${p.tag}</span>
-</div>
-
-<div class="product-info">
-<h3>${p.name}</h3>
-<p>Oversized Fit</p>
-<div class="price">${p.price} MAD</div>
-
-<div class="customizer">
-<div class="customizer-title">CUSTOMIZE YOUR NAYR</div>
-
-<div class="color-options">
-<button type="button" class="color-choice ${p.color==="black"?"selected":""}"
-style="background:#111"
-aria-label="Black"
-onclick="chooseColor(${p.id},'black')"></button>
-
-<button type="button" class="color-choice ${p.color==="white"?"selected":""}"
-style="background:#fff"
-aria-label="White"
-onclick="chooseColor(${p.id},'white')"></button>
-</div>
-
-<div class="custom-preview" id="preview-${p.id}">
-COLOR: ${p.color.toUpperCase()} · SELECT YOUR SIZE
-</div>
-
-<select id="size-${p.id}" aria-label="${t("size")}">
-<option value="">${t("sizeOptions")}</option>
-<option>S</option><option>M</option>
-<option>L</option><option>XL</option><option>2XL</option>
-</select>
-
-<button class="add" onclick="addToCart(${p.id})">${t("add")}</button>
-</div>
-</div>
-</article>`).join("");
-}
-
-const selectedColors = {};
-
-function chooseColor(id,color){
-selectedColors[id]=color;
-
-const preview=document.getElementById("preview-"+id);
-if(preview){
-preview.textContent="COLOR: "+color.toUpperCase()+" · SELECT YOUR SIZE";
-}
-
-const card=document.querySelectorAll(".product");
-card.forEach(item=>{
-const buttons=item.querySelectorAll(".color-choice");
-if(item.querySelector("#preview-"+id)){
-buttons[0].classList.toggle("selected",color==="black");
-buttons[1].classList.toggle("selected",color==="white");
-}
-});
-}
 
 function addToCart(id){
-const size=document.getElementById("size-"+id).value;
+  const size=document.getElementById("size-"+id).value;
 
-if(!size){
-alert(lang==="ar"?"اختار المقاس أولاً":"Choisis une taille d'abord");
-return;
-}
+  if(!size){
+    alert(lang==="ar"?"اختار المقاس أولاً":"Choisis une taille d'abord");
+    return;
+  }
 
-const p=products.find(x=>x.id===id);
-const color=selectedColors[id]||p.color;
-
-cart.push({...p,color,size});
-renderCart();
-alert(t("added"));
+  const p=products.find(x=>x.id===id);
+  cart.push({...p,size});
+  renderCart();
+  alert(t("added"));
 }
 
 function removeItem(i){cart.splice(i,1);renderCart()}
