@@ -8,6 +8,120 @@
 <title>NAYR STREETWEAR | Official Store</title>
 <meta name="description" content="NAYR STREETWEAR - Discover your attitude. Oversized streetwear in Morocco.">
 <style>
+/* NAYR LUXURY HEADER */
+.nayr-header {
+  height: 88px;
+  padding: 0 6%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(5,5,5,.96);
+  border-bottom: 1px solid #292929;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  backdrop-filter: blur(15px);
+}
+
+.nayr-header .brand {
+  font-size: 34px;
+  font-weight: 1000;
+  letter-spacing: 5px;
+  line-height: 1;
+}
+
+.nayr-header .brand span {
+  font-size: 11px;
+  vertical-align: top;
+  color: #aaa;
+}
+
+.nayr-header .brand small {
+  display: block;
+  font-size: 8px;
+  letter-spacing: 6px;
+  text-align: center;
+  margin-top: 7px;
+  color: #aaa;
+}
+
+.nayr-nav {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.nayr-nav a {
+  font-size: 10px;
+  letter-spacing: 2px;
+  color: #bbb;
+  transition: .3s;
+}
+
+.nayr-nav a:hover {
+  color: white;
+}
+
+.nayr-header .header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nayr-header .lang,
+.nayr-header .cart-btn,
+.nayr-header .menu-btn {
+  background: transparent;
+  color: white;
+  border: 1px solid #444;
+  padding: 10px 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.nayr-header .cart-btn:hover,
+.nayr-header .lang:hover {
+  background: white;
+  color: black;
+}
+
+.menu-btn {
+  display: none !important;
+}
+
+@media(max-width:750px) {
+  .nayr-header {
+    height: 72px;
+    padding: 0 5%;
+  }
+
+  .nayr-header .brand {
+    font-size: 27px;
+  }
+
+  .nayr-nav {
+    display: none;
+    position: absolute;
+    top: 72px;
+    left: 0;
+    right: 0;
+    background: #080808;
+    padding: 25px;
+    flex-direction: column;
+    align-items: flex-start;
+    border-bottom: 1px solid #333;
+  }
+
+  .nayr-nav.nav-open {
+    display: flex;
+  }
+
+  .menu-btn {
+    display: flex !important;
+  }
+}
+
 /* NAYR COLOR SELECTOR - PREMIUM */
 .color-options {
   display: flex !important;
@@ -391,17 +505,44 @@ footer strong{color:white;letter-spacing:3px}
 <div class="topbar" id="topbar">توصيل لجميع مدن المغرب 🇲🇦 | NAYR — WEAR YOUR ATTITUDE</div>
 
 <header>
-<a href="#" class="brand">NAYR<small>STREETWEAR</small></a>
-<nav>
-<a href="#home" data-ar="الرئيسية" data-fr="Accueil">الرئيسية</a>
-<a href="#shop" data-ar="المتجر" data-fr="Boutique">المتجر</a>
-<a href="#about" data-ar="قصتنا" data-fr="Notre histoire">قصتنا</a>
-<a href="#order" data-ar="الطلب" data-fr="Commander">الطلب</a>
-</nav>
-<div class="header-actions">
-<button class="lang" onclick="toggleLang()">Français</button>
-<button class="cart-btn" onclick="document.querySelector('#order').scrollIntoView()">🛍 <span id="cart-count">0</span></button>
-</div>
+
+<header class="nayr-header">
+  <a href="#home" class="brand">
+    NAYR<span>®</span>
+    <small>STREETWEAR</small>
+  </a>
+
+  <nav class="nayr-nav">
+    <a href="#home">HOME</a>
+    <a href="#shop">COLLECTION</a>
+    <a href="#about">OUR STORY</a>
+    <a href="#order">ORDER</a>
+  </nav>
+
+  <div class="header-actions">
+    <button class="lang" onclick="toggleLang()">FR</button>
+
+    <button class="cart-btn"
+      aria-label="Shopping bag"
+      onclick="document.querySelector('#order').scrollIntoView({behavior:'smooth'})">
+      <svg viewBox="0 0 24 24" width="21" height="21"
+        fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M5 8h14l1 13H4L5 8Z"/>
+        <path d="M9 9V6a3 3 0 0 1 6 0v3"/>
+      </svg>
+      <span id="cart-count">0</span>
+    </button>
+
+    <button class="menu-btn" aria-label="Menu"
+      onclick="document.querySelector('.nayr-nav').classList.toggle('nav-open')">
+      <svg viewBox="0 0 24 24" width="23" height="23"
+        fill="none" stroke="currentColor" stroke-width="1.5">
+        <path d="M3 7h18M3 12h18M3 17h18"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
 </header>
 
 <main>
