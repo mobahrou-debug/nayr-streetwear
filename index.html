@@ -267,10 +267,47 @@ document.querySelectorAll("#order-form input").forEach((el,i)=>el.placeholder=la
 document.querySelector("#order-form textarea").placeholder=lang==="ar"?"أي معلومات إضافية...":"Any additional information...";
 renderProducts();renderCart();
 }
-document.getElementById("order-form").addEventListener("submit",e=>{
-e.preventDefault();
-if(!cart.length){alert(lang==="ar"?"السلة فارغة. أضف منتجاً أولاً.":"Ton panier est vide.");return}
-alert(lang==="ar"?"شكراً! هاد الموقع مازال فمرحلة التجربة. الطلب غير مفعّل حتى نضيفو رقم WhatsApp ونجهزو التأكيد.":"Merci ! Le site est en phase de test. Les commandes seront activées après l'ajout du numéro WhatsApp.");
+document.getElementById("order-form").addEventListener("submit", e => {
+  e.preventDefault();
+
+  if (!cart.length) {
+    alert(lang === "ar" ? "السلة فارغة. أضف منتجاً أولاً." : "Ton panier est vide.");
+    return;
+  }
+
+  const form = e.currentTarget;
+  const data = new FormData(form);
+
+  const name = data.get("name") || "";
+  const phone = data.get("phone") || "";
+  const city = data.get("city") || "";
+  const address = data.get("address") || "";
+  const notes = data.get("notes") || "";
+
+  const items = cart.map(item =>
+    `${item.name} - ${item.size || ""} - ${item.price} MAD`
+  ).join("\n");
+
+  const total = cart.reduce((sum, item) => sum + item.price, 0);
+
+  const message =
+`🛍️ طلب جديد - NAYR STREETWEAR
+
+👤 الاسم: ${name}
+📞 الهاتف: ${phone}
+📍 المدينة: ${city}
+🏠 العنوان: ${address}
+
+👕 المنتجات:
+${items}
+
+💰 المجموع: ${total} MAD
+
+📝 ملاحظات: ${notes}`;
+
+  const url = "https://wa.me/212617499577?text=" + encodeURIComponent(message);
+
+  window.open(url, "_blank");
 });
 renderProducts();renderCart();
 </script>
