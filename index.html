@@ -100,7 +100,123 @@ footer strong{color:white;letter-spacing:3px}
  .field.full{grid-column:auto}
  .section-head h2{font-size:27px}
 }
-</style>
+/* NAYR CINEMATIC EXPERIENCE */
+.hero {
+  min-height: 690px;
+  position: relative;
+  overflow: hidden;
+  grid-template-columns: 1fr 1.1fr;
+  background:
+    radial-gradient(ellipse at 70% 45%, #292929 0%, #101010 40%, #050505 78%);
+}
+
+.hero:before {
+  content: "N";
+  position: absolute;
+  font-size: min(75vw, 850px);
+  font-weight: 1000;
+  color: #ffffff08;
+  right: 3%;
+  top: -25%;
+  line-height: 1;
+  pointer-events: none;
+}
+
+.hero-copy {
+  animation: nayrReveal 1.2s ease both;
+}
+
+.hero h1 {
+  font-size: clamp(70px, 11vw, 145px);
+  letter-spacing: -8px;
+  line-height: .78;
+  margin: 30px 0;
+  font-weight: 1000;
+}
+
+.hero h1 span {
+  color: transparent;
+  -webkit-text-stroke: 1px #f5f5f5;
+  font-size: .58em;
+  letter-spacing: -3px;
+  margin-top: 15px;
+}
+
+.hero p {
+  font-size: 17px;
+  color: #bbb;
+  max-width: 420px;
+}
+
+.hero-photo {
+  height: 530px;
+  border: 0;
+  background-position: center 35%;
+  box-shadow: 0 25px 80px #0009;
+  animation: nayrPhoto 1.5s ease both;
+}
+
+.hero-photo:after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(0deg, #0009, transparent 60%);
+}
+
+.photo-label {
+  z-index: 2;
+  letter-spacing: 3px;
+}
+
+.eyebrow {
+  letter-spacing: 5px;
+  font-weight: bold;
+}
+
+.primary {
+  padding: 18px 32px;
+  letter-spacing: 1px;
+  transition: .3s;
+}
+
+.primary:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 35px #fff3;
+}
+
+@keyframes nayrReveal {
+  from { opacity: 0; transform: translateY(35px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes nayrPhoto {
+  from { opacity: 0; transform: scale(1.06); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+@media(max-width:750px) {
+  .hero {
+    min-height: auto;
+    grid-template-columns: 1fr;
+    padding: 35px 6% 55px;
+  }
+
+  .hero-photo {
+    height: 390px;
+    grid-row: 1;
+  }
+
+  .hero h1 {
+    font-size: 76px;
+    letter-spacing: -5px;
+  }
+}
+
+@media(prefers-reduced-motion: reduce) {
+  .hero-copy, .hero-photo {
+    animation: none;
+  }
+}</style>
 </head>
 <body>
 
@@ -121,7 +237,25 @@ footer strong{color:white;letter-spacing:3px}
 </header>
 
 <main>
-<section class="hero" id="home">
+<section class="<section class="hero" id="home">
+  <div class="hero-copy">
+    <div class="eyebrow">INDEPENDENT STREET CULTURE · MOROCCO</div>
+    <h1>NAYR <span>NOT MADE TO BLEND IN.</span></h1>
+    <p id="hero-text">
+      أكثر من مجرد لباس… أسلوب وهوية. اكتشف عالم NAYR.
+    </p>
+    <a href="#shop" class="primary" id="hero-btn">
+      SHOP THE DROP ↗
+    </a>
+    <div style="margin-top:28px;color:#777;font-size:10px;letter-spacing:3px">
+      EST. MOROCCO — 2026
+    </div>
+  </div>
+
+  <div class="hero-photo">
+    <div class="photo-label">DREAM BIG. STAY REAL.</div>
+  </div>
+</section>" id="home">
 <div class="hero-copy">
 <div class="eyebrow" id="eyebrow">NAYR STREETWEAR — MOROCCO</div>
 <h1>NAYR <span>STREETWEAR</span></h1>
