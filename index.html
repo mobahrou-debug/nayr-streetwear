@@ -311,5 +311,45 @@ ${items}
 });
 renderProducts();renderCart();
 </script>
+<style>
+.social-float {
+  position: fixed;
+  right: 18px;
+  bottom: 22px;
+  z-index: 9999;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.social-float a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 17px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 14px;
+  box-shadow: 0 4px 15px #0005;
+}
+.social-float .insta {
+  background: #fff;
+  color: #111;
+}
+.social-float .whatsapp {
+  background: #25D366;
+  color: #fff;
+}
+</style>
+
+<div class="social-float">
+  <a class="insta" href="https://www.instagram.com/nayr.streetwear/" target="_blank">
+    Instagram ↗
+  </a>
+  <a class="whatsapp" href="https://wa.me/212617499577" target="_blank">
+    WhatsApp ↗
+  </a>
+</div>
 </body>
 </html>
